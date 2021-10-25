@@ -1,0 +1,129 @@
+.user {
+  display: flex;
+  justify-content: space-between;
+  margin: 62px 98px 0 192px;
+  .info {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 232px;
+    img {
+      width: 100%;
+    }
+    .uploader {
+      margin-top: 14px;
+      font-weight: $fw-light;
+      color: $darkGray;
+      cursor: pointer;
+      text-transform: uppercase;
+      &:hover {
+        color: $darkerGray;
+      }
+      input[type="file"] {
+        display: none;
+      }
+    }
+    .name {
+      margin-top: 31px;
+    }
+    .mail {
+      margin-top: 13px;
+      font-weight: $fw-light;
+    }
+    button {
+      margin-top: 59px;
+    }
+  }
+
+  .permissions {
+    margin-top: 8px;
+    width: 592px;
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 54px;
+      padding-right: 18px;
+    }
+    .section {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #d8d8d8;
+      padding-bottom: 27px;
+      padding-right: 18px;
+      margin-bottom: 20px;
+      &.permission-group {
+        flex-direction: column;
+        .dropdown {
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+        }
+        ul {
+          display: none;
+          margin-top: 43px;
+          margin-left: 22px;
+          &.show {
+            display: block;
+          }
+          li {
+            &::before {
+              font-size: 28px;
+              position: absolute;
+              content: "\2022";
+              color: $red;
+              font-weight: bold;
+              display: inline-block;
+              margin-left: -24px;
+              margin-top: -9px;
+            }
+            &.disabled::before {
+              color: rgba($red, 0.3);
+            }
+            &.permission-granted::before {
+              color: $lightBlue;
+            }
+            &.disabled.permission-granted::before {
+              color: rgba($lightBlue, 0.3);
+            }
+            .list-item {
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .details {
+    margin-top: 8px;
+    width: 292px;
+    .heading {
+      margin-bottom: 54px;
+    }
+    .user-state {
+      margin-bottom: 45px;
+    }
+    label {
+      color: $lightBlue;
+      font-size: $fs-small;
+      .label-text {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    input[type="text"],
+    select {
+      @include input();
+      margin-left: 12px;
+      margin-bottom: 24px;
+    }
+    button {
+      margin-left: 12px;
+      margin-top: 95px;
+    }
+  }
+}

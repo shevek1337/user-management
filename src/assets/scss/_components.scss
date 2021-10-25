@@ -1,0 +1,149 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 16px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &:disabled + .slider {
+      cursor: default;
+      background-color: rgba($red, 0.2);
+      &:before {
+        background-color: rgba($red, 0.5);
+      }
+    }
+    &:checked + .slider {
+      background-color: rgba($lightBlue, 0.3);
+    }
+    &:checked + .slider:before {
+      background-color: $lightBlue;
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(100%);
+    }
+
+    &:disabled:checked + .slider {
+      background-color: rgba($lightBlue, 0.2);
+    }
+    &:disabled:checked + .slider:before {
+      background-color: rgba($lightBlue, 0.6);
+    }
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($red, 0.3);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+    &:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 0;
+      bottom: -20%;
+      background-color: $red;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+  }
+}
+
+.btn {
+  &.purple {
+    @include button($purple);
+  }
+  &.lightBlue {
+    @include button($lightBlue);
+  }
+  &.sm {
+    @include button($lightBlue, small);
+  }
+  &.sm-red {
+    @include button(rgba($red, 0.5), small);
+  }
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #0000008f;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  .modal-inner {
+    min-width: 646px;
+    background-color: white;
+    padding: 72px 82px 80px 123px;
+    box-shadow: 0px 0px 30px #00000029;
+    .submit {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        font-weight: $fw-light;
+        font-style: italic;
+      }
+    }
+  }
+  .name,
+  .email,
+  .role {
+    position: relative;
+  }
+  .name {
+    align-items: end;
+    display: flex;
+    gap: 5px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 62px;
+    margin-top: 60px;
+    .role {
+      width: 50%;
+    }
+    label {
+      color: $lightBlue;
+      font-size: $fs-small;
+    }
+    input[type="text"],
+    select {
+      @include input();
+    }
+  }
+
+  &.delete {
+    .name {
+      margin: 50px 0;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $gray;
+      .active-status {
+        color: $lightBlue;
+        font-weight: $fw-bold;
+      }
+      .inactive-status {
+        color: $red;
+        font-weight: $fw-bold;
+      }
+    }
+  }
+}

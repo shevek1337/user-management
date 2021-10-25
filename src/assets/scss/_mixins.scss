@@ -1,0 +1,51 @@
+@mixin header-button($color, $pointer: false) {
+  position: absolute;
+  top: 83%;
+  width: 72px;
+  height: 72px;
+  border: none;
+  border-radius: 999px;
+  background-color: $color;
+  color: white;
+  font-weight: $fw-light;
+  font-family: $font;
+  line-height: 0.2;
+  @if $pointer {
+    cursor: pointer;
+  }
+}
+
+@mixin button($color, $small: false) {
+  padding: 20px 42px;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 100px;
+  background: $color;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: $fw-medium;
+  &:disabled {
+    background-color: $mediumGray;
+    color: $darkerGray;
+  }
+  @if $small {
+    padding: 10px 16px;
+    font-size: 16px;
+    font-family: $font;
+    box-shadow: 0px 1px 3px #00000029;
+  }
+}
+
+@mixin input() {
+  font-family: $font;
+  font-weight: $fw-light;
+  font-size: $fs-normal;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid $mediumGray;
+  padding-bottom: 5px;
+  margin-top: 8px;
+  background: inherit;
+}

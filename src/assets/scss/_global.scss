@@ -1,0 +1,45 @@
+body {
+  background-color: $gray;
+  font-family: $font;
+  font-size: $fs-normal;
+}
+
+.disabled {
+  color: $darkGray;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.font-bold {
+  font-weight: $fw-bold;
+}
+
+.font-light {
+  font-weight: $fw-light;
+}
+
+.font-medium {
+  font-weight: $fw-medium;
+}
+
+.font-sm {
+  font-size: $fs-small;
+}
+
+.font-xl {
+  font-size: $fs-x-large;
+}
+
+.font-lg {
+  font-size: $fs-large;
+}

@@ -1,0 +1,86 @@
+.home {
+  margin: 62px 98px 0 263px;
+  table {
+    width: 100%;
+    thead {
+      border-bottom: 2px solid #d8d8d8;
+      th {
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 32px;
+        font-weight: $fw-medium;
+        svg {
+          vertical-align: text-top;
+          margin-top: 7px;
+          margin-left: 28px;
+        }
+        &:first-of-type {
+          padding-left: 14px;
+          text-align: start;
+        }
+        &:last-of-type {
+          text-align: end;
+          padding-right: 38px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        border-bottom: 1px solid #d8d8d8;
+        td {
+          width: 27%;
+          vertical-align: middle;
+          padding: 37px 0;
+          text-align: center;
+          &:first-of-type {
+            text-align: start;
+          }
+          &:last-of-type {
+            text-align: end;
+            padding-right: 28px;
+          }
+        }
+      }
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+    .records {
+      display: flex;
+      gap: 20px;
+      select {
+        border: none;
+        background: none;
+        font-weight: $fw-bold;
+      }
+    }
+    .pagination {
+      margin-right: 28px;
+      ul {
+        display: flex;
+        gap: 17px;
+        li {
+          .page {
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: $fw-bold;
+            color: black;
+            &.active {
+              padding: 6px 12px;
+              background-color: $mediumGray;
+              box-shadow: 0px 3px 6px #00000029;
+            }
+          }
+          .prev,
+          .next {
+            text-decoration: none;
+            color: black;
+            font-weight: $fw-light;
+          }
+        }
+      }
+    }
+  }
+}

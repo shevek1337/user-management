@@ -1,0 +1,42 @@
+.head {
+  background: white;
+  box-shadow: 0 3px 6px #00000029;
+  height: 210px;
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+    margin-left: 160px;
+    margin-right: 98px;
+    .title {
+      margin-left: 116px;
+      font-weight: $fw-medium;
+      letter-spacing: 0px;
+    }
+    input[type="text"].search {
+      font-family: $font;
+      font-size: $fs-medium;
+      width: 357px;
+      outline: none;
+      border: none;
+      border-bottom: 2px solid $darkerGray;
+      padding-bottom: 5px;
+      &::placeholder {
+        font-style: italic;
+        font-weight: $fw-light;
+      }
+    }
+    .add-button {
+      @include header-button($blue, pointer);
+    }
+    .setup-button {
+      @include header-button($mediumGray);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
